@@ -1,6 +1,6 @@
 {% set name = "UHDM" %}
-{% set version = "1.68" %}
-{% set sha256 = "60637ea9304444114c7d8b7dfe3f19ca7640b3ade77615d9b4bebe904f9090fd" %}
+{% set version = "1.74" %}
+{% set sha256 = "92cefa641610457772c91d45864e3f4d65bfa0bf300886dc3067a561358a8eed" %}
 
 package:
   name: {{ name|lower }}
@@ -10,8 +10,6 @@ source:
   fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/chipsalliance/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    - patches/0001-move-lib-from-namespace.patch
 
 build:
   number: 0
@@ -26,7 +24,7 @@ requirements:
     - cmake
     - make
     - orderedmultidict
-    - pkg-config 
+    - pkg-config
     - python
   host:
     - capnproto
