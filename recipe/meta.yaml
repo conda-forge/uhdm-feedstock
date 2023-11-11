@@ -1,6 +1,6 @@
 {% set name = "UHDM" %}
-{% set version = "1.78" %}
-{% set sha256 = "7335a70f2ac1ea9193f845262cd223255df5cd65b591ca4f74c75f9c8612cad9" %}
+{% set version = "1.79" %}
+{% set sha256 = "4b50a26632306143f4b60b73aca77e18926c983ee3c818baf077ced61b34c617" %}
 
 package:
   name: {{ name|lower }}
