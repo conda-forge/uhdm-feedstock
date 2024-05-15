@@ -30,6 +30,13 @@ requirements:
   host:
     - capnproto
 
+test:
+  commands:
+    - test -f $PREFIX/bin/uhdm-cmp
+    - test -f $PREFIX/bin/uhdm-dump
+    - test -f $PREFIX/bin/uhdm-hier
+    - test -f $PREFIX/bin/uhdm-lint
+
 outputs:
   - name: uhdm
 
@@ -53,13 +60,9 @@ outputs:
         - python
         - orderedmultidict
         - {{ pin_subpackage("uhdm", exact=True) }}
-
-test:
-  commands:
-    - test -f $PREFIX/bin/uhdm-cmp
-    - test -f $PREFIX/bin/uhdm-dump
-    - test -f $PREFIX/bin/uhdm-hier
-    - test -f $PREFIX/bin/uhdm-lint
+    test:
+      imports:
+        - uhdm
 
 about:
   home: https://github.com/chipsalliance/UHDM
