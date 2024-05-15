@@ -1,6 +1,6 @@
 {% set name = "UHDM" %}
-{% set version = "1.82" %}
-{% set sha256 = "f33d62a1ae0381389b4bc89f639e127bb04557bfdd2f8ff4f57e2f7b5df2e80f" %}
+{% set version = "1.83" %}
+{% set sha256 = "4b02ccf8dede2074f0906e1a447ebfd2af7e6774b518ccefcc52b6401200c658" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('uhdm', max_pin='x') }}
@@ -20,6 +20,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
     - make
