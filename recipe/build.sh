@@ -5,19 +5,22 @@ set -x
 
 export CXXFLAGS="${CXXFLAGS} -D_LIBCPP_DISABLE_AVAILABILITY"
 
-cmake -B build \
-    -DCMAKE_BUILD_TYPE=Release \
+if [[ "$PKG_NAME" == "python-uhdm" ]]; then
+  CMAKE_ARGS="$CMAKE_ARGS -DPYTHON_EXECUTABLE=$PYTHON -DPython3_EXECUTABLE=$PYTHON -DUHDM_WITH_PYTHON=ON"
+  exit 1
+else
+  CMAKE_ARGS="$CMAKE_ARGS -DUHDM_WITH_PYTHON=OFF"
+fi
+
+mkdir -p build
+cd build
+
+cmake .. \
+    ${CMAKE_ARGS} \
     -DCMAKE_CXX_STANDARD=17 \
-    -DCMAKE_INSTALL_PREFIX=$PREFIX \
     -DBUILD_SHARED_LIBS=ON \
     -DUHDM_BUILD_TESTS=OFF \
-    -DUHDM_USE_HOST_CAPNP=ON \
-    -DCMAKE_MACOSX_RPATH=1 \
-    -DCMAKE_INSTALL_RPATH=$PREFIX/lib \
-    -DPYTHON_EXECUTABLE="$PYTHON" \
-    -DPython3_EXECUTABLE="$PYTHON" \
-    -DCMAKE_FIND_FRAMEWORK=NEVER \
-    -DCMAKE_FIND_APPBUNDLE=NEVER
+    -DUHDM_USE_HOST_CAPNP=ON
 
-cmake --build build --config Release
-cmake --install build --config Release
+make -j${CPU_COUNT}
+make install

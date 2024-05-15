@@ -7,12 +7,13 @@ package:
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://github.com/chipsalliance/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
+  patches:
+    - fix_cmake.diff
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('uhdm', max_pin='x') }}
@@ -24,14 +25,34 @@ requirements:
     - {{ compiler('cxx') }}
     - cmake
     - make
-    - orderedmultidict
     - pkg-config
-    - python
+    - orderedmultidict
   host:
     - capnproto
-    - swig
-  run:
-    - python
+
+outputs:
+  - name: uhdm
+
+  - name: python-uhdm
+    script: build.sh
+    requirements:
+      build:
+        - {{ compiler('c') }}
+        - {{ stdlib("c") }}
+        - {{ compiler('cxx') }}
+        - cmake
+        - make
+        - pkg-config
+      host:
+        - capnproto
+        - python
+        - swig
+        - orderedmultidict
+        - {{ pin_subpackage("uhdm", exact=True) }}
+      run:
+        - python
+        - orderedmultidict
+        - {{ pin_subpackage("uhdm", exact=True) }}
 
 test:
   commands:
