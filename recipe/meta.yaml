@@ -11,6 +11,8 @@ source:
   sha256: {{ sha256 }}
   patches:
     - fix_cmake.diff
+    # This makes the build go faster
+    - multiple_python.diff
 
 build:
   number: 1
