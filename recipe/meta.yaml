@@ -13,6 +13,7 @@ source:
     - fix_cmake.diff
     # This makes the build go faster
     - multiple_python.diff
+    - no_link_libpython.diff
 
 build:
   number: 1
