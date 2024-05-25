@@ -32,59 +32,17 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_python3.10.____cpython</td>
+              <td>linux_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20322&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/uhdm-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.10.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/uhdm-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.11.____cpython</td>
+              <td>osx_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20322&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/uhdm-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.11.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20322&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/uhdm-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>linux_64_python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20322&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/uhdm-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.9.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.10.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20322&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/uhdm-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.10.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.11.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20322&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/uhdm-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.11.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.8.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20322&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/uhdm-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.8.____cpython" alt="variant">
-                </a>
-              </td>
-            </tr><tr>
-              <td>osx_64_python3.9.____cpython</td>
-              <td>
-                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=20322&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/uhdm-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/uhdm-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_" alt="variant">
                 </a>
               </td>
             </tr>
@@ -100,6 +58,7 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-python--uhdm-green.svg)](https://anaconda.org/conda-forge/python-uhdm) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/python-uhdm.svg)](https://anaconda.org/conda-forge/python-uhdm) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/python-uhdm.svg)](https://anaconda.org/conda-forge/python-uhdm) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/python-uhdm.svg)](https://anaconda.org/conda-forge/python-uhdm) |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-uhdm-green.svg)](https://anaconda.org/conda-forge/uhdm) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/uhdm.svg)](https://anaconda.org/conda-forge/uhdm) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/uhdm.svg)](https://anaconda.org/conda-forge/uhdm) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/uhdm.svg)](https://anaconda.org/conda-forge/uhdm) |
 
 Installing uhdm
@@ -112,41 +71,41 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `uhdm` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `python-uhdm, uhdm` can be installed with `conda`:
 
 ```
-conda install uhdm
-```
-
-or with `mamba`:
-
-```
-mamba install uhdm
-```
-
-It is possible to list all of the versions of `uhdm` available on your platform with `conda`:
-
-```
-conda search uhdm --channel conda-forge
+conda install python-uhdm uhdm
 ```
 
 or with `mamba`:
 
 ```
-mamba search uhdm --channel conda-forge
+mamba install python-uhdm uhdm
+```
+
+It is possible to list all of the versions of `python-uhdm` available on your platform with `conda`:
+
+```
+conda search python-uhdm --channel conda-forge
+```
+
+or with `mamba`:
+
+```
+mamba search python-uhdm --channel conda-forge
 ```
 
 Alternatively, `mamba repoquery` may provide more information:
 
 ```
 # Search all versions available on your platform:
-mamba repoquery search uhdm --channel conda-forge
+mamba repoquery search python-uhdm --channel conda-forge
 
-# List packages depending on `uhdm`:
-mamba repoquery whoneeds uhdm --channel conda-forge
+# List packages depending on `python-uhdm`:
+mamba repoquery whoneeds python-uhdm --channel conda-forge
 
-# List dependencies of `uhdm`:
-mamba repoquery depends uhdm --channel conda-forge
+# List dependencies of `python-uhdm`:
+mamba repoquery depends python-uhdm --channel conda-forge
 ```
 
 
