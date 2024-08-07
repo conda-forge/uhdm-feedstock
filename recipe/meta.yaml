@@ -1,6 +1,6 @@
 {% set name = "UHDM" %}
-{% set version = "1.83" %}
-{% set sha256 = "4b02ccf8dede2074f0906e1a447ebfd2af7e6774b518ccefcc52b6401200c658" %}
+{% set version = "1.84" %}
+{% set sha256 = "bb2acbdd294dd05660c78ba34704440032935b8bc77cae352c853533b5a7c583" %}
 
 package:
   name: {{ name|lower }}
@@ -16,7 +16,7 @@ source:
     - no_link_libpython.diff
 
 build:
-  number: 2
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('uhdm', max_pin='x') }}
