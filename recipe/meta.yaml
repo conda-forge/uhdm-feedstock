@@ -9,9 +9,6 @@ package:
 source:
   url: https://github.com/chipsalliance/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
-  patches:
-    # This makes the build go faster
-    - no_link_libpython.diff
 
 build:
   number: 0
