@@ -11,7 +11,6 @@ source:
   sha256: {{ sha256 }}
   patches:
     # This makes the build go faster
-    - multiple_python.diff
     - no_link_libpython.diff
 
 build:
