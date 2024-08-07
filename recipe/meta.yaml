@@ -10,7 +10,6 @@ source:
   url: https://github.com/chipsalliance/{{ name }}/archive/refs/tags/v{{ version }}.tar.gz
   sha256: {{ sha256 }}
   patches:
-    - fix_cmake.diff
     # This makes the build go faster
     - multiple_python.diff
     - no_link_libpython.diff
