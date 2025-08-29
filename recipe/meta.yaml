@@ -49,11 +49,12 @@ outputs:
         - make
         - pkg-config
       host:
-        - capnproto
         - python
-        - swig
+        - build
+        - capnproto
         - orderedmultidict
         - setuptools
+        - swig
         - {{ pin_subpackage("uhdm", exact=True) }}
       run:
         - python
