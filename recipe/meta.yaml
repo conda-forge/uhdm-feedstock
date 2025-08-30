@@ -1,6 +1,6 @@
 {% set name = "UHDM" %}
-{% set version = "1.84" %}
-{% set sha256 = "bb2acbdd294dd05660c78ba34704440032935b8bc77cae352c853533b5a7c583" %}
+{% set version = "1.86" %}
+{% set sha256 = "179203b166be5d1be12b901c69c6a569ebebf4fe47bc674b1268bd9319216fce" %}
 
 package:
   name: {{ name|lower }}
@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win]
   run_exports:
     - {{ pin_subpackage('uhdm', max_pin='x') }}
@@ -53,6 +53,7 @@ outputs:
         - python
         - swig
         - orderedmultidict
+        - python-build
         - setuptools
         - {{ pin_subpackage("uhdm", exact=True) }}
       run:
