@@ -53,6 +53,7 @@ outputs:
         - python
         - swig
         - orderedmultidict
+        - python-build
         - setuptools
         - {{ pin_subpackage("uhdm", exact=True) }}
       run:
