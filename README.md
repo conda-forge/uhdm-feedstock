@@ -13,7 +13,6 @@ Development: https://github.com/chipsalliance/UHDM
 
 Universal Hardware Data Model. A complete modeling of the IEEE SystemVerilog Object Model with VPI Interface, Elaborator, Serialization, Visitor and Listener. Used as a compiled interchange format in between SystemVerilog tools. Compiles on Linux gcc, Windows msys2-gcc & msvc, OsX
 
-
 Current build status
 ====================
 

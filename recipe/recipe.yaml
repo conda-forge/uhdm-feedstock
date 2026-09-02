@@ -1,0 +1,86 @@
+schema_version: 1
+
+context:
+  name: UHDM
+  version: "1.87"
+
+recipe:
+  name: uhdm-split
+  version: ${{ version }}
+
+source:
+  url: https://github.com/chipsalliance/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: 877b74bf1a0ad5fc64f46df9e2af47a088e50b362469a36c5da5f96dc3926045
+
+build:
+  number: 1
+  skip:
+    - win
+  script: build
+
+outputs:
+  - package:
+      name: uhdm
+    requirements:
+      build:
+        - ${{ compiler("c") }}
+        - ${{ stdlib("c") }}
+        - ${{ compiler("cxx") }}
+        - cmake
+        - make
+        - pkg-config
+        - orderedmultidict
+      host:
+        - capnproto
+      run_exports:
+        - ${{ pin_subpackage("uhdm", upper_bound="x") }}
+    tests:
+      - script:
+          - test -f $PREFIX/bin/uhdm-cmp
+          - test -f $PREFIX/bin/uhdm-dump
+          - test -f $PREFIX/bin/uhdm-hier
+          - test -f $PREFIX/bin/uhdm-lint
+
+  - package:
+      name: python-uhdm
+    requirements:
+      build:
+        - ${{ compiler("c") }}
+        - ${{ stdlib("c") }}
+        - ${{ compiler("cxx") }}
+        - cmake
+        - make
+        - pkg-config
+        - orderedmultidict
+      host:
+        - capnproto
+        - python
+        - pip
+        - swig
+        - orderedmultidict
+        - setuptools
+        - ${{ pin_subpackage("uhdm", exact=True) }}
+      run:
+        - python
+        - orderedmultidict
+        - ${{ pin_subpackage("uhdm", exact=True) }}
+      run_exports:
+        - ${{ pin_subpackage("uhdm", upper_bound="x") }}
+    tests:
+      - python:
+          imports:
+            - uhdm
+
+about:
+  homepage: https://github.com/chipsalliance/UHDM
+  license: Apache-2.0
+  license_file: LICENSE
+  summary: Universal Hardware Data Model. A complete modeling of the IEEE SystemVerilog Object Model with VPI Interface, Elaborator, Serialization, Visitor and Listener. Used as a compiled interchange format in between SystemVerilog tools. Compiles on Linux gcc, Windows msys2-gcc & msvc, OsX
+  description: |
+    Universal Hardware Data Model. A complete modeling of the IEEE SystemVerilog Object Model with VPI Interface, Elaborator, Serialization, Visitor and Listener. Used as a compiled interchange format in between SystemVerilog tools. Compiles on Linux gcc, Windows msys2-gcc & msvc, OsX
+  repository: https://github.com/chipsalliance/UHDM
+
+extra:
+  feedstock-name: uhdm
+  recipe-maintainers:
+    - timkpaine
