@@ -1,0 +1,13 @@
+diff --git a/python/CMakeLists.txt b/python/CMakeLists.txt
+index 5d59322..2afc34f 100644
+--- a/python/CMakeLists.txt
++++ b/python/CMakeLists.txt
+@@ -3,7 +3,7 @@ find_package(SWIG REQUIRED)
+ include(${SWIG_USE_FILE})
+ 
+ # Include python
+-find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
++find_package(Python3 REQUIRED COMPONENTS Interpreter Development.Module)
+ include_directories(${Python3_INCLUDE_DIRS} ${GENDIR}/uhdm ${CMAKE_CURRENT_SOURCE_DIR})
+ 
+ set_source_files_properties(${PROJECT_NAME}.i
