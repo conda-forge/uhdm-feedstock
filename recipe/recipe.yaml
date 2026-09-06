@@ -11,9 +11,11 @@ recipe:
 source:
   url: https://github.com/chipsalliance/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
   sha256: 877b74bf1a0ad5fc64f46df9e2af47a088e50b362469a36c5da5f96dc3926045
+  patches:
+    - find-python-module.patch
 
 build:
-  number: 1
+  number: 2
   skip:
     - win
   script: build
