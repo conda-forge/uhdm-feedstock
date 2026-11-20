@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: UHDM
-  version: "1.88"
+  version: "1.89"
 
 recipe:
   name: uhdm-split
@@ -10,7 +10,7 @@ recipe:
 
 source:
   url: https://github.com/chipsalliance/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: e26265f46f1414e8ae4536c464aec161413d8baf423f70f824a1839cbf0ddb12
+  sha256: 2a1f3d97398b7a9ddcc98463220d0322bb1cbed66f3c2e7d26f4edf9fd38333e
   patches:
     - find-python-module.patch
 
