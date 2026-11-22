@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: UHDM
-  version: "1.89"
+  version: "1.90"
 
 recipe:
   name: uhdm-split
@@ -10,7 +10,7 @@ recipe:
 
 source:
   url: https://github.com/chipsalliance/${{ name }}/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 2a1f3d97398b7a9ddcc98463220d0322bb1cbed66f3c2e7d26f4edf9fd38333e
+  sha256: 7a2c7b2c1ded2921dc513f2a79c27891bb568d800ccc05cb604505e4ea9485f9
   patches:
     - find-python-module.patch
 
@@ -30,7 +30,7 @@ outputs:
         - ${{ compiler("cxx") }}
         - cmake
         - make
-        - pkg-config
+        - pkgconf
         - orderedmultidict
       host:
         - capnproto
@@ -52,7 +52,7 @@ outputs:
         - ${{ compiler("cxx") }}
         - cmake
         - make
-        - pkg-config
+        - pkgconf
         - orderedmultidict
       host:
         - capnproto
