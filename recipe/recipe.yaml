@@ -30,7 +30,7 @@ outputs:
         - ${{ compiler("cxx") }}
         - cmake
         - make
-        - pkg-config
+        - pkgconf
         - orderedmultidict
       host:
         - capnproto
@@ -52,7 +52,7 @@ outputs:
         - ${{ compiler("cxx") }}
         - cmake
         - make
-        - pkg-config
+        - pkgconf
         - orderedmultidict
       host:
         - capnproto
